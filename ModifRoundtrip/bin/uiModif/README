@@ -1,0 +1,9 @@
+TO MODIFY
+
+Line 31 : Define the mode (GUI=false for no GUI)
+Line 60 : Define the mode (mode = 1 for refactoring)
+Line 66 : Define the path to the root ecore (domainMetamodel = "path to the root ecore")
+Line 70 : Define the type of the modif specification to be generated (modifSpecificationType = 1 for noModif)
+Line 96 : Define the path of an already existing modif specification (modifSpecification = "modif specification")
+			or comment this line
+Line 105 : Define the name of the ecore or comment this line and line 106

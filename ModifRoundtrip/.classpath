@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src.modif"/>
+	<classpathentry kind="src" path="UI"/>
+	<classpathentry kind="src" path="Roundtrip"/>
+	<classpathentry kind="src" path="Utils"/>
+	<classpathentry kind="src" path="src.dependency"/>
+	<classpathentry kind="src" path="src.migration"/>
+	<classpathentry kind="src" path="src.ecoremodif"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins">
+		<attributes>
+			<attribute name="annotationpath" value="/ModifRoundtrip"/>
+		</attributes>
+		<accessrules>
+			<accessrule kind="accessible" pattern="emf"/>
+		</accessrules>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/com.google.inject_3.0.0.v201312141243.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.antlr.runtime_3.2.0.v201101311130.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.apache.log4j_1.2.15.v201012070815.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.eclipse.emf.compare_3.5.1.201709090201.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.13.0.v20170609-0707.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.eclipse.jface_3.13.2.v20171022-1656.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.eclipse.xtext_2.12.0.v20170518-0959.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.eclipse.xtext.ecore_2.12.0.v20170519-0752.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.eclipse.xtext.util_2.12.0.v20170518-0959.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.eclipse.compare_3.7.101.v20170724-1603.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.eclipse.emf.compare.edit_4.3.1.201709090201.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abdou/Desktop/Projet/eclipse/plugins/org.eclipse.emf.compare.ide.ui_4.4.1.201709090201.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

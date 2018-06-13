@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="umlFsm"
+    nsURI="http://fr.ubo.mde.babau.umlFsm" nsPrefix="fr.ubo.mde.babau.umlFsm">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="#//String"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Namespace" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true" eSuperTypes="#//Namespace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StateMachine" eSuperTypes="#//Behavior">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="region" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Region" containment="true" eOpposite="#//Region/stateMachine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="submachineState" ordered="false"
+        upperBound="-1" eType="#//State" eOpposite="#//State/submachine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionPoint" ordered="false"
+        upperBound="-1" eType="#//Pseudostate" containment="true" eOpposite="#//Pseudostate/stateMachine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendedStateMachine" ordered="false"
+        upperBound="-1" eType="#//StateMachine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//Namespace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subvertex" ordered="false"
+        upperBound="-1" eType="#//Vertex" containment="true" eOpposite="#//Vertex/container"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" ordered="false"
+        upperBound="-1" eType="#//Transition" containment="true" eOpposite="#//Transition/container"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" ordered="false"
+        eType="#//State" eOpposite="#//State/region"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendedRegion" ordered="false"
+        eType="#//Region"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" ordered="false"
+        eType="#//StateMachine" eOpposite="#//StateMachine/region"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" ordered="false"
+        upperBound="-1" eType="#//Transition" volatile="true" transient="true" derived="true"
+        eOpposite="#//Transition/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" ordered="false"
+        upperBound="-1" eType="#//Transition" volatile="true" transient="true" derived="true"
+        eOpposite="#//Transition/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false"
+        eType="#//Region" eOpposite="#//Region/subvertex"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//Namespace">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
+        eType="#//TransitionKind" defaultValueLiteral="external"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false"
+        lowerBound="1" eType="#//Region" eOpposite="#//Region/transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedTransition" ordered="false"
+        eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" ordered="false"
+        eType="#//Constraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effect" ordered="false"
+        eType="#//Behavior" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" ordered="false"
+        upperBound="-1" eType="#//Trigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" eType="#//Vertex" eOpposite="#//Vertex/incoming"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" eType="#//Vertex" eOpposite="#//Vertex/outgoing"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//Namespace #//Vertex">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isComposite" ordered="false"
+        lowerBound="1" eType="#//Boolean" changeable="false" volatile="true" transient="true"
+        defaultValueLiteral="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOrthogonal" ordered="false"
+        lowerBound="1" eType="#//Boolean" changeable="false" volatile="true" transient="true"
+        defaultValueLiteral="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSimple" ordered="false"
+        lowerBound="1" eType="#//Boolean" changeable="false" volatile="true" transient="true"
+        defaultValueLiteral="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSubmachineState" ordered="false"
+        lowerBound="1" eType="#//Boolean" changeable="false" volatile="true" transient="true"
+        defaultValueLiteral="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="submachine" ordered="false"
+        eType="#//StateMachine" eOpposite="#//StateMachine/submachineState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connection" ordered="false"
+        upperBound="-1" eType="#//ConnectionPointReference" containment="true" eOpposite="#//ConnectionPointReference/state"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionPoint" ordered="false"
+        upperBound="-1" eType="#//Pseudostate" containment="true" eOpposite="#//Pseudostate/state"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedState" ordered="false"
+        eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateInvariant" ordered="false"
+        eType="#//Constraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" ordered="false"
+        eType="#//Behavior" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exit" ordered="false" eType="#//Behavior"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="doActivity" ordered="false"
+        eType="#//Behavior" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deferrableTrigger" ordered="false"
+        upperBound="-1" eType="#//Trigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="region" ordered="false"
+        upperBound="-1" eType="#//Region" containment="true" eOpposite="#//Region/state"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionPointReference" eSuperTypes="#//Vertex">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" ordered="false"
+        upperBound="-1" eType="#//Pseudostate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exit" ordered="false" upperBound="-1"
+        eType="#//Pseudostate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" ordered="false"
+        eType="#//State" eOpposite="#//State/connection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pseudostate" eSuperTypes="#//Vertex">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
+        eType="#//PseudostateKind" defaultValueLiteral="initial"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" ordered="false"
+        eType="#//StateMachine" eOpposite="#//StateMachine/connectionPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" ordered="false"
+        eType="#//State" eOpposite="#//State/connectionPoint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TransitionKind">
+    <eLiterals name="internal" literal="internal"/>
+    <eLiterals name="local" value="1" literal="local"/>
+    <eLiterals name="external" value="2" literal="external"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PseudostateKind">
+    <eLiterals name="initial" literal="initial"/>
+    <eLiterals name="deepHistory" value="1" literal="deepHistory"/>
+    <eLiterals name="shallowHistory" value="2" literal="shallowHistory"/>
+    <eLiterals name="join" value="3" literal="join"/>
+    <eLiterals name="fork" value="4" literal="fork"/>
+    <eLiterals name="junction" value="5" literal="junction"/>
+    <eLiterals name="choice" value="6" literal="choice"/>
+    <eLiterals name="entryPoint" value="7" literal="entryPoint"/>
+    <eLiterals name="exitPoint" value="8" literal="exitPoint"/>
+    <eLiterals name="terminate" value="9" literal="terminate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="boolean"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+</ecore:EPackage>

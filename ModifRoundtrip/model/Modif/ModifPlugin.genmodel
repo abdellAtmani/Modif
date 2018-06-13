@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ModifPlugin/src" editDirectory="/ModifPlugin.edit/src"
+    editorDirectory="/ModifPlugin.editor/src" modelPluginID="ModifPlugin" modelName="ModifPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" editPluginID="ModifPlugin.edit"
+    editorPluginID="ModifPlugin.editor" operationReflection="true" importOrganizing="true"
+    pluginKey="ModifPlugin">
+  <foreignModel>Modif.ecore</foreignModel>
+  <genPackages prefix="Modif" disposableProviderFactory="true" ecorePackage="Modif.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Modif.ecore#//PrimitiveType">
+      <genEnumLiterals ecoreEnumLiteral="Modif.ecore#//PrimitiveType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="Modif.ecore#//PrimitiveType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="Modif.ecore#//PrimitiveType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="Modif.ecore#//PrimitiveType/char"/>
+      <genEnumLiterals ecoreEnumLiteral="Modif.ecore#//PrimitiveType/float"/>
+    </genEnums>
+    <genClasses ecoreClass="Modif.ecore#//Modifications">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//Modifications/rootPackageModification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//Modifications/addRootClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//Modifications/addNameClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Modifications/removeAllAnnotations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Modifications/removeAllOperations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Modifications/removeAllEStringAttributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Modifications/removeAllOpposites"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Modifications/addAllOpposite"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Modif.ecore#//Modification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Modification/oldName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Modification/newName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Modification/remove"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Modification/removeEAnnotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//Modification/annotationModification"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//PackageModification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//PackageModification/oldPrefixName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//PackageModification/newPrefixName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//PackageModification/oldURIName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//PackageModification/newURIName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//PackageModification/hide"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//PackageModification/packageModification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//PackageModification/classModification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//PackageModification/dataTypeModification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//PackageModification/enumModification"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//ClassModification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ClassModification/changeAbstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ClassModification/hide"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ClassModification/flatten"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ClassModification/flattenAll"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//ClassModification/featureModification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//ClassModification/addFeatures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//ClassModification/addDeriveds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//ClassModification/enumerate"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Modif.ecore#//StructuralFeatureModification"/>
+    <genClasses ecoreClass="Modif.ecore#//AttributeModification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AttributeModification/changeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AttributeModification/newType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//AttributeModification/changeBounds"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//ReferenceModification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//ReferenceModification/changeBounds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ReferenceModification/changeContainement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ReferenceModification/removeOpposite"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//ReferenceModification/addOpposite"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//ReferenceModification/reify"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//ChangeBounds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ChangeBounds/oldLower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ChangeBounds/newLower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ChangeBounds/oldUpper"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ChangeBounds/newUpper"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//DataTypeModification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//DataTypeModification/oldInstanceTypeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//DataTypeModification/newInstanceTypeName"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//EnumModification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//EnumModification/oldInstanceTypeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//EnumModification/newInstanceTypeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//EnumModification/reify"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//EnumModification/enumLiteralModification"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//EnumLiteralModification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//EnumLiteralModification/oldLiteral"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//EnumLiteralModification/newLiteral"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//EnumLiteralModification/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//EnumLiteralModification/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//AnnotationModification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AnnotationModification/oldSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AnnotationModification/newSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AnnotationModification/removeEAnnotations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AnnotationModification/remove"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//AnnotationModification/detailsEntryModification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modif.ecore#//AnnotationModification/annotationModification"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//DetailsEntryModification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//DetailsEntryModification/oldKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//DetailsEntryModification/newKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//DetailsEntryModification/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//DetailsEntryModification/newValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//DetailsEntryModification/remove"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Modif.ecore#//AddFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddFeature/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddFeature/lower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddFeature/upper"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//AddAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddAttribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddAttribute/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//AddReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddReference/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//AddOpposite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddOpposite/oppositeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddOpposite/oppositeLower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddOpposite/oppositeUpper"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//AddRootClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddRootClass/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//AddNameClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddNameClass/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddNameClass/nameName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Modif.ecore#//AddDerived">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddDerived/newName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddDerived/referenceName"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//AddDerivedReference"/>
+    <genClasses ecoreClass="Modif.ecore#//AddDerivedAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//AddDerivedAttribute/attributeName"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//ReferenceReification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ReferenceReification/nameClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ReferenceReification/nameFirstReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//ReferenceReification/nameSecondReference"/>
+    </genClasses>
+    <genClasses ecoreClass="Modif.ecore#//Enumerate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Enumerate/enumName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modif.ecore#//Enumerate/attributeName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

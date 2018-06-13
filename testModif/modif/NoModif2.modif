@@ -1,0 +1,13 @@
+root test to test2
+Prefix test to test2
+URI "http://fr.ubo.mde.test" to "http://fr.ubo.mde.test"
+
+class {
+	A {
+		att n
+		ref b
+	} ;
+	B {
+		att n
+	}
+}

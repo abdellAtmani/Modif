@@ -1,0 +1,28 @@
+root Master to Master2
+Prefix Master to Master2
+URI "http://fr.ubo.mde.Master" to "http://fr.ubo.mde.master"
+
+package {
+	remove test2 to test22
+	Prefix test2 to test22
+	URI "http://fr.ubo.mde.test2" to "http://fr.ubo.mde.test2"
+
+	class {
+		remove B to B {
+			remove att nb to nb bounds (1,1) to (1,1)
+			remove att nb2 to nb2 bounds (1,1) to (1,1)
+		}
+		annotation {
+			remove comments to comments
+		}
+	}
+}
+
+class {
+	remove Classe to Classe {
+		remove ref eleves to eleves bounds (0,-1) to (0,-1)
+	} ;
+	remove N to N {
+		remove att n to n bounds (1,1) to (1,1)
+	}
+}

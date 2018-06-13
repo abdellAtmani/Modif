@@ -1,0 +1,28 @@
+root Master to Master2
+Prefix Master to Master2
+URI "http://fr.ubo.mde.Master" to "http://fr.ubo.mde.master"
+
+package {
+	test2 to test22
+	Prefix test2 to test22
+	URI "http://fr.ubo.mde.test2" to "http://fr.ubo.mde.test2"
+
+	class {
+		B to B {
+			att nb to nb bounds (1,1) to (1,1)
+			att nb2 to nb2 bounds (1,1) to (1,1)
+		}
+		annotation {
+			comments to comments
+		}
+	}
+}
+
+class {
+	Classe to Classe {
+		ref eleves to eleves bounds (0,-1) to (0,-1)
+	} ;
+	N to N {
+		att n to n bounds (1,1) to (1,1)
+	}
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Migration/src" modelPluginID="Migration" modelName="Migration"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Migration.ecore</foreignModel>
+  <genPackages prefix="Migration" disposableProviderFactory="true" ecorePackage="Migration.ecore#/">
+    <genClasses ecoreClass="Migration.ecore#//Migration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Migration.ecore#//Migration/instances"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//Migration/inputModelURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//Migration/inputMetamodelURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//Migration/outputModelURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//Migration/outputMetamodelURI"/>
+    </genClasses>
+    <genClasses ecoreClass="Migration.ecore#//Instance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//Instance/UUID"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Migration.ecore#//Instance/deletion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Migration.ecore#//Instance/derived"/>
+    </genClasses>
+    <genClasses ecoreClass="Migration.ecore#//Deletion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Migration.ecore#//Deletion/deletedAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Migration.ecore#//Deletion/deletedReferences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//Deletion/deleteInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="Migration.ecore#//DeletedAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//DeletedAttribute/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Migration.ecore#//DeletedReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//DeletedReference/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Migration.ecore#//DerivedReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Migration.ecore#//DerivedReference/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//DerivedReference/newReferenceName"/>
+    </genClasses>
+    <genClasses ecoreClass="Migration.ecore#//ReferencePath">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Migration.ecore#//ReferencePath/referenceName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

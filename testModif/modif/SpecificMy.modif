@@ -1,0 +1,22 @@
+removeAllAnnotations
+
+root test to test2
+Prefix test to test2
+URI "http://fr.ubo.mde.test" to "http://fr.ubo.mde.test2"
+
+package {
+	hide test2 to test22
+	Prefix test2 to test22
+	URI "http://fr.ubo.mde.test2" to "http://fr.ubo.mde.test22"
+
+	class {
+		remove ""
+	}
+}
+
+class {
+	remove "" ;
+	remove "" ;
+	remove "" ;
+	remove ""
+}

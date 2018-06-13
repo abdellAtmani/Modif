@@ -1,0 +1,15 @@
+root test to Master
+Prefix test to Master
+URI "http://fr.ubo.mde.test" to "http://fr.ubo.mde.Master"
+
+removeEAnnotations
+
+class {
+	A to Classe {
+		att n to nom bounds (1,1) to (1,1)
+		ref b to eleves bounds (0,-1) to (0,-1)
+	} ;
+	B to Eleve {
+		att n to numero bounds (1,1) to (1,1)
+	}
+}
